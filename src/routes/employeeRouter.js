@@ -8,7 +8,7 @@ const {
   updateInteractionHandler,
   deleteInteractionHandler,
   getUserByIdHandler,
-  getClientByNameHandler,
+  getClientByDniHandler,
   updateUserHandler,
   updateClientHandler,
   createReporteHandler,
@@ -38,7 +38,7 @@ employeeRouter.delete("/interaction/:id", deleteInteractionHandler);
 
 employeeRouter.get("/info/:id", getUserByIdHandler);
 
-employeeRouter.get("/client/info/:name", getClientByNameHandler);
+employeeRouter.get("/client/info/:dni", getClientByDniHandler);
 
 employeeRouter.put("/user/update/:id", updateUserHandler)
 
