@@ -7,7 +7,7 @@ const {
   updateInteraction,
   deleteInteraction,
   getUserById,
-  getClientByName,
+  getClientByDni,
   updateClients,
   createNewReporte,
   getAllReporte,
@@ -231,10 +231,10 @@ const getUserByIdHandler = async (req, res) => {
   }
 };
 
-const getClientByNameHandler = async (req, res) => { 
-  const { name } = req.params;
+const getClientByDniHandler = async (req, res) => { 
+  const { dni } = req.params;
   try {
-    const client = await getClientByName(name);
+    const client = await getClientByDni(dni);
     if (!client) {
       throw Error("Client not found");
     }
@@ -293,7 +293,7 @@ module.exports = {
   updateInteractionHandler,
   deleteInteractionHandler,
   getUserByIdHandler,
-  getClientByNameHandler,
+  getClientByDniHandler,
   updateUserHandler,
   updateClientHandler,
   createReporteHandler,

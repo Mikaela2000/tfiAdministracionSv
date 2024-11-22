@@ -234,9 +234,9 @@ const getUserById = async (id) => {
       throw new Error("Error getting user by id");
     }
   };
-  const getClientByName = async (name) => {
+  const getClientByDni = async (dni) => {
     try {
-      const client = await Client.findOne({ where: { nombre: name } });
+      const client = await Client.findOne({ where: { dni: dni } });
       return client;
     } catch (error) {
       throw new Error("Error getting client by name");
@@ -265,7 +265,7 @@ module.exports = {
     updateInteraction,
     deleteInteraction,
     getUserById,
-    getClientByName,
+    getClientByDni,
     updateClients,
     createNewReporte,
     getAllReporte,
