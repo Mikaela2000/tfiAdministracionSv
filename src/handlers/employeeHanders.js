@@ -160,11 +160,11 @@ const getAllInteractionForIdHandler = async (req, res) => {
 };
 const updateClientHandler = async (req, res) => {
   const { clientId } = req.params;
-  const { nombre, telefono, email,categoria } = req.body;
+  const { nombre, dni,  telefono, email,categoria } = req.body;
 
   try {
       // Llamar al servicio para actualizar el cliente
-      const updatedClient = await updateClients(clientId, nombre, telefono, email, categoria);
+      const updatedClient = await updateClients(clientId, nombre, dni, telefono, email, categoria);
 
       res.status(200).json(updatedClient);
   } catch (error) {

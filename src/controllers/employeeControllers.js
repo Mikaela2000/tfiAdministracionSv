@@ -179,11 +179,12 @@ const updateInteraction = async (
 const updateClients = async (
     clientId,
     nombre,
+    dni,
     telefono,
     email,
     categoria
 ) => {
-    if (!clientId || !nombre || !telefono || !email || !categoria) {
+    if (!clientId || !nombre || !dni || !telefono || !email || !categoria) {
         throw new Error("All fields are required");
     }
     
@@ -198,6 +199,7 @@ const updateClients = async (
     }
 
     client.nombre = nombre;
+    client.dni = dni;
     client.telefono = telefono;
     client.email = email;
     client.categoria = categoria;
